@@ -26,6 +26,11 @@ async def provider_base(uid: int, typea: Dict[str, Any]) -> Dict[str, Any]:
         user_info = (await client.get(user_info_api)).json()
         bangumi_list = (await client.get(bangumi_list_api)).json()
 
+    if user_info["code"] != 0:
+        raise ValueError(user_info["message"])
+    if bangumi_list["code"] != 0:
+        raise ValueError(bangumi_list["message"])
+
     username = user_info["data"]["name"]
 
     return {

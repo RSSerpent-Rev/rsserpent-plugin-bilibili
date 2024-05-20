@@ -20,6 +20,10 @@ async def provider(uid: int) -> Dict[str, Any]:
         user_info = (await client.get(user_info_api)).json()
         video_list = (await client.get(video_list_api)).json()
 
+    if user_info["code"] != 0:
+        raise ValueError(user_info["message"])
+    if video_list["code"] != 0:
+        raise ValueError(video_list["message"])
     username = user_info["data"]["name"]
 
     return {
