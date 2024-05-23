@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from rsserpent.utils import cached
+from rsserpent_rev.utils import cached
 
 from .bangumi import provider_base
 
