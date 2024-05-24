@@ -11,7 +11,7 @@ plugin = Plugin(
         email="creedowl@gmail.com",
     ),
     prefix="/bilibili",
-    repository="https://github.com/creedowl/rsserpent-plugin-bilibili",
+    repository="https://github.com/RSSerpent-Rev/rsserpent-plugin-bilibili",
     routers={
         user.video.path: user.video.provider,
         user.bangumi.path: user.bangumi.provider,
