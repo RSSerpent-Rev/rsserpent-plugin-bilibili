@@ -1,8 +1,8 @@
-from typing import Any, Dict
+from typing import Any
 
 import arrow
-from rsserpent_rev.utils import HTTPClient, cached
 
+from rsserpent_rev.utils import HTTPClient, cached
 
 platform_trans = {
     "android": "安卓版",
@@ -15,7 +15,7 @@ path = "/bilibili/app/update/{platform}"
 
 
 @cached
-async def provider(platform: str) -> Dict[str, Any]:
+async def provider(platform: str) -> dict[str, Any]:
     """订阅 Bilibili 客户端更新信息."""
     api_url = f"https://app.bilibili.com/x/v2/version?mobi_app={platform}"
 

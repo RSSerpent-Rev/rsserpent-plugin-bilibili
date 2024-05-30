@@ -1,6 +1,5 @@
-from starlette.testclient import TestClient
-
 from rsserpent_plugin_bilibili import app
+from starlette.testclient import TestClient
 
 
 def test_route(client: TestClient) -> None:

@@ -1,19 +1,18 @@
-from typing import Any, Dict
+from typing import Any
 
 import arrow
-from rsserpent_rev.utils import HTTPClient, cached
 
+from rsserpent_rev.utils import HTTPClient, cached
 
 path = "/bilibili/user/{uid}/video"
 
 
 @cached
-async def provider(uid: int) -> Dict[str, Any]:
+async def provider(uid: int) -> dict[str, Any]:
     """订阅 up 上传的最新视频."""
     user_info_api = f"https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp"
     video_list_api = (
-        f"https://api.bilibili.com/x/space/arc/search?mid={uid}&ps=30"
-        "&tid=0&pn=1&keyword=&order=pubdate&jsonp=jsonp"
+        f"https://api.bilibili.com/x/space/arc/search?mid={uid}&ps=30" "&tid=0&pn=1&keyword=&order=pubdate&jsonp=jsonp"
     )
 
     async with HTTPClient() as client:
